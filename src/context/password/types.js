@@ -1,0 +1,9 @@
+export const ADD_PASSWORD = "Add Password";
+export const GET_PASSWORDS = "Get Passwords";
+export const DELETE_PASSWORD = "Delete Password";
+export const UPDATE_PASSWORD = "Update Password";
+export const SET_CURRENT = "Set Current";
+export const LOADING = "Loading";
+export const PASSWORD_ERROR = "Password Error";
+export const FILTERERING_CONTACTS = "Filtering Contacts";
+export const CLEAR_FILTER = "Clear Filter";
