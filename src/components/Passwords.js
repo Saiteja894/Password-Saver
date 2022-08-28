@@ -6,7 +6,7 @@ import PasswordFilter from "./PasswordFilter";
 const Passwords = () => {
   const passwordContext = useContext(PasswordContext);
 
-  const { passwords, getPasswords, loading, filtered } = passwordContext;
+  const { passwords, getPasswords, loading, filtered, alert } = passwordContext;
 
   useEffect(() => {
     getPasswords();
@@ -15,10 +15,15 @@ const Passwords = () => {
   return (
     <div className="container passwords-container">
       <PasswordFilter />
+      {alert && (
+        <div class="alert alert-success mt-3" role="alert">
+          {alert}
+        </div>
+      )}
       {!filtered ? (
         !loading ? (
           passwords.length === 0 ? (
-            "No Contacts"
+            "No Passwords"
           ) : (
             passwords.map((password) => (
               <Password key={password.id} password={password} />

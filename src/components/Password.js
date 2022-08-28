@@ -13,6 +13,16 @@ const Password = ({ password }) => {
     setCurrent(pass);
     navigate("/add");
   };
+
+  const getUrl = (url) => {
+    if (
+      url.toLowerCase().startsWith("http://") ||
+      url.toLowerCase().startsWith("https://")
+    ) {
+      return url;
+    }
+    return "https://" + url;
+  };
   return (
     <div className="d-flex crd justify-content-between pt-3 pb-3 px-4 mb-3 shadow bg-light">
       <div>
@@ -20,7 +30,9 @@ const Password = ({ password }) => {
 
         <p className="m-2">
           <i className="fas fa-link me-2"></i>
-          {password.url}
+          <a href={getUrl(password.url)} target="_blank">
+            {password.url}
+          </a>
         </p>
 
         <p className="m-2">

@@ -8,13 +8,18 @@ const PasswordFilter = () => {
     filterPassword(e.target.value);
   };
   return (
-    <div className="mt-2">
-      <input
-        type="search"
-        placeholder="Search..."
-        className="form-control"
-        onChange={changeHandler}
-      />
+    <div className="filter-search mt-2">
+      <div>
+        <input
+          type="search"
+          placeholder="Search..."
+          className="form-control filter-input"
+          onChange={changeHandler}
+        />
+      </div>
+      <div className="filter-icon">
+        <i class="fas fa-search"></i>
+      </div>
     </div>
   );
 };

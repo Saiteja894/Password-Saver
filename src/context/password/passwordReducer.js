@@ -46,6 +46,7 @@ export default (state, action) => {
         ...state,
         passwords: [...state.passwords, action.payload],
         loading: false,
+        alert: "Password Added Succesfully!",
       };
 
     case FILTERERING_CONTACTS:

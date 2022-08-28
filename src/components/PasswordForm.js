@@ -13,6 +13,8 @@ const PasswordForm = () => {
 
   const passwordContext = useContext(PasswordContext);
   const { addPassword, current, updatePassword, setCurrent } = passwordContext;
+  const [showPassword, setShowPassword] = useState(false);
+
   const [pass, setPass] = useState({
     name: "",
     url: "",
@@ -114,9 +116,9 @@ const PasswordForm = () => {
             onKeyUp={(e) => (e.key === "Enter" ? passRef.current.focus() : "")}
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 password-container">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             className="form-control"
             placeholder="Password"
             name="password"
@@ -127,6 +129,12 @@ const PasswordForm = () => {
               e.key === "Enter" ? submitRef.current.focus() : ""
             }
           />
+          <i
+            className={`fas fa-eye${
+              !showPassword ? "-slash" : ""
+            } me-2 eyestyle`}
+            onClick={() => setShowPassword(!showPassword)}
+          ></i>
         </div>
 
         <button

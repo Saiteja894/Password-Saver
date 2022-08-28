@@ -26,3 +26,29 @@ body {
 .manb {
   justify-content: center !important;
 }
+
+.filter-search {
+  position: relative;
+}
+
+.filter-input {
+  padding-left: 30px;
+}
+
+.filter-icon {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  opacity: 0.5;
+}
+
+.eyestyle {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.password-container {
+  position: relative;
+}
